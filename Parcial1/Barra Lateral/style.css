@@ -1,0 +1,226 @@
+:root{
+    --ncolor:  rgb(255, 255, 255);
+    --ncolor1: rgb(255, 0, 0);
+    --ncolor2:  rgb(108, 226, 39);
+    --ncolor3:  rgb(22, 61, 238);
+    --ncolor4: rgb(0, 0, 0);
+    --ncolor5:  grey;
+    --color6: rgb(187, 14, 255);
+    --color7:  rgb(255, 0, 242);
+}
+
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'Noto Sans KR', sans-serif;
+    background: #333;
+}
+
+
+.menu{
+    width:50%;
+    height: auto;
+    text-align: center;
+    background:#fff;
+    border-radius: 3px;
+
+}
+.menu h2{
+    text-align: center;
+    padding:10px;
+    font-size: 16px;
+    background:#eee;
+    color:#333;
+    letter-spacing: 3px;
+}
+.menu ul li {
+    list-style:none;
+}
+.menu ul li a {
+    display: block;
+    padding: 10px 0;
+    text-decoration: none;
+    font-weight: 700;
+    color:#333;
+    background: #fff;
+    font-size: 10px;
+    text-transform: uppercase;
+    transition: .1s;
+    border :1px solid #eee;
+}
+
+.menu:hover ul li a{
+    color:#eee;
+}
+
+.menu ul li a:hover{
+    color:#fff;
+    transform: scale(1.1);
+    background: #168796;
+    border: 1px solid #168796;
+
+}
+
+.info{
+    position: relative;
+    width:auto;
+    height: auto;
+    text-align: center;
+    background: #fff;
+    border-radius: 3px;
+}
+
+.info h2{
+    text-align: center;
+    padding:10px;
+    font-size: 16px;
+    background:#eee;
+    color:#333;
+    letter-spacing: 3px;
+}
+
+@media (max-width: 800px) and  (min-width:401px) /* Tablet */{ 
+
+    .menu{
+        position: relative;
+        bottom:150px;
+        left: 260px;
+        width:100%;
+        height:auto;
+    }
+    .menu h2{
+        text-align:center;
+        padding:10px;
+        font-size: 16px;
+        background:#eee;
+        color:#333;
+        letter-spacing: 3px;
+        margin-left: 0;
+    }
+    .menu ul li {
+        list-style:none;
+    }
+    .menu ul li a{
+        float:left;
+        display: block;
+        padding: 10px 0;
+        text-decoration: none;
+        font-weight: 700;
+        color:#333;
+        background: #fff;
+        font-size: 10px;
+        text-transform: uppercase;
+        transition: .1s;
+        border :1px solid #eee;
+    }
+    
+    
+    .menu:hover ul li a{
+        color:#eee;
+    }
+    
+    .menu ul li a:hover{
+        color:#fff;
+        transform: scale(1.1);
+        background: #168796;
+        border: 1px solid #168796;
+
+    }
+    .info{
+        width:100%;
+        height: 100%;
+        text-align: center;
+        background: #fff;
+        border-radius: 3px;
+        margin-left: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    
+    .info h2{
+        text-align: center;
+        padding:10px;
+        font-size: 16px;
+        background:#eee;
+        color:#333;
+        letter-spacing: 3px;
+    }
+   
+
+}
+@media (max-width: 400px) /* Celular */{
+
+    .menu{
+        position: relative;
+        bottom:150px;
+        left: 260px;
+        width:100%;
+        height:auto;
+    
+    }
+    .menu h2{
+        text-align: center;
+        padding:10px;
+        font-size: 16px;
+        background:#eee;
+        color:#333;
+        letter-spacing: 3px;
+    }
+    .menu ul li {
+        list-style:none;
+    }
+    .menu ul li a {
+        display: block;
+        float:none;
+        padding: 10px 0;
+        text-decoration: none;
+        font-weight: 700;
+        color:#333;
+        background: #fff;
+        font-size: 10px;
+        text-transform: uppercase;
+        transition: .1s;
+        border :1px solid #eee;
+    }
+    
+    .menu:hover ul li a{
+        color:#eee;
+    }
+    
+    .menu ul li a:hover{
+        color:#fff;
+        transform: scale(1.1);
+        background: #168796;
+        border: 1px solid #168796;
+
+    }
+    .info{
+        left:50px;
+        width:100%;
+        height: auto;
+        text-align: right;
+        background: #fff;
+        border-radius: 3px;
+    }
+    
+    .info h2{
+        text-align: center;
+        padding:10px;
+        font-size: 16px;
+        background:#eee;
+        color:#333;
+        letter-spacing: 3px;
+    }
+    .texto{
+        width:50px;
+    }
+
+}
+
