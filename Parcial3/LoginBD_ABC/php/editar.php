@@ -1,44 +1,48 @@
+<link rel="stylesheet" href ="../css/style.css">
 
 <?php
 
 if(isset($_GET['editar'])){
 	$editar_id = $_GET['editar'];
 
-	$consulta = "SELECT * FROM usuarios WHERE idusuario =" .$editar_id;
+	$consulta = "SELECT * FROM Jedis WHERE id =" .$editar_id;
 	$ejecutar = mysqli_query($con, $consulta);
 	$fila = mysqli_fetch_array($ejecutar);
-	$idusuario=$fila['idusuario'];
-	$usuario = $fila['nombreusuario'];
-	$email = $fila['correo'];
-	$password = $fila['pswrd'];
+	$id=$fila['id'];
+	$Jedi = $fila['Jedi'];
+	$Rango = $fila['Rango'];
+	$ColorSable = $fila['ColorSable'];
 }
 ?>
 <br />
-<form method="GET" action="#">
-<input type="text" name="idusuario" value="<?php echo $idusuario; ?>" ><br />
-<input type="text" name="nombre" value="<?php echo $usuario; ?>"><br />
-<input type="text" name="email" value="<?php echo $email; ?>"><br />
-<input type="password" name="passw" value="<?php echo $password; ?>"><br />
+
+<div class="ctn-form">
+<h1 class="title"> Editar Campo</h1>
+<form method="POST" action="">
+<input style="display:none" type="text" name="idusuario" value="<?php echo $id; ?>" ><br />
+<label>Jedi:<br></label>
+<input type="text" name="Jedi" value="<?php echo $Jedi; ?>"><br />
+<label>Rango:<br></label>
+<input type="text" name="Rango" value="<?php echo $Rango; ?>"><br />
+<label>ColorSable:<br></label>
+<input type="text" name="ColorSable" value="<?php echo $ColorSable; ?>"><br />
 <input type="submit" name="actualizar" value="ACTUALIZAR DATOS">
+</div>
 </form>
 
 <?php
-if (isset($_GET['actualizar'])){
+if (isset($_POST['actualizar'])){
 
-$actualizar_id = $_GET['idusuario'];	
-$actualizar_nombre = $_GET['nombre'];
-$actualizar_email = $_GET['email'];
-$actualizar_password = $_GET['passw'];
-
-$actualizar_password=password_hash($actualizar_password,PASSWORD_DEFAULT);
+$actualizar_Jedi = $_POST['Jedi'];
+$actualizar_Rango = $_POST['Rango'];
+$actualizar_Color = $_POST['ColorSable'];
 
 
-$actualizar = "UPDATE usuarios SET nombreusuario='$actualizar_nombre', pswrd='$actualizar_password', email='$actualizar_email' WHERE idusuario= '$actualizar_id'";
+
+$actualizar = "UPDATE Jedis SET Jedi='$actualizar_Jedi', Rango='$actualizar_Rango',ColorSable='$actualizar_Color' WHERE id= '$editar_id'";
 $ejecutar = mysqli_query($con, $actualizar);
-echo $ejecutar;
 
 if ($ejecutar){
-	
 	echo "<script>alert('Datos Actualizados!')</script>";
 	echo "<script>windows.open('ABC.php','_self')</script>";
 }

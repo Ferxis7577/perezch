@@ -18,7 +18,6 @@
         <div class="ctn-form">
             <img src="..//img/login.gif" alt="" class="logo">
             <h1 class="title"> Iniciar Sesion</h1>
-
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
                 <label for="">Email</label>
                 <input type="text" name="email">
