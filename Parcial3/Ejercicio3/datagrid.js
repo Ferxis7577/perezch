@@ -5,7 +5,7 @@ $('document').ready(function(){
             paging:true,pageIndex:1, pageSize:10,  loadIndication: true,
             loadIndicationDelay: 500, confirmDeleting: true, deleteConfirm: "Favor de confirmar",
 
-             // si se requiere tener un paginado, se activa pagePrevText:"Last",  pageNextText:"First",
+        
 
             data: resultados,
             fields: [{name: "idusuario", type: "text", title: "idUsuario", width: 15, validate:"requiered", align: "center"},
