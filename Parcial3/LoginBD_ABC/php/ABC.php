@@ -15,11 +15,38 @@ $con = mysqli_connect("127.0.0.1", "root","","perezcha") or die ("Error!");
 	<meta charset="utf-8">
 
 </head>
+
+<script type="text/javascript">
+function ConfirmDelete(){
+	var respuesta=confirm("Esta seguro que desea eliminar a este usuario");
+	if(respuesta==true){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+</script>
+
+
+
+<script type="text/javascript">
+function ConfirmInsert(){
+	var respuesta=confirm("Esta seguro que desea agregar a este usuario?");
+	if(respuesta==true){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+</script>
+
+
 <body BACKGROUND="../img/fondo.jpg">
 <div class="container-all">
 	<div class="ctn-form">
-		<h1 class="title"> Altas, Bajas y Consultas</h1>
-
+	<h1 class="title"> Altas, Bajas y Consultas</h1>
  	<form method="POST" action="ABC.php">
 	 <label>Jedi:<br></label>
 	 <input type="text" name="Jedi" placeholder = "nombre del jedi"><br />
@@ -27,7 +54,7 @@ $con = mysqli_connect("127.0.0.1", "root","","perezcha") or die ("Error!");
 	 <input type="text" name="Rango" placeholder = "rango del jedi"><br />
 	 <label>ColorSable:<br></label>
 	 <input type="text" name="ColordeSable" placeholder = "sable del jedi"><br /><br>
-	 <input type="submit" name="insert" value = "INSERTAR DATOS"><br/>
+	 <input type="submit" name="insert" value = "INSERTAR DATOS" onclick="return ConfirmInsert()"><br/>
 	 <span class="text-footer"> Desea volver al Inicio?
 	 	<a href="close_session.php"class="close-session">Cerrar Sesion</a></a>
 	</span>
@@ -61,13 +88,15 @@ while ( $fila = mysqli_fetch_array($ejecutar)) {
 
 ?>
 
+
+
 <tr align="center">
 <td><?php echo $id; ?></td>
 <td><?php echo $Jedi; ?></td>
 <td><?php echo $Rango; ?></td>
 <td><?php echo $ColordeSable; ?></td>
 <td><a href="ABC.php?editar=<?php echo $id; ?>">Editar</a></td>
-<td><a href="ABC.php?borrar=<?php echo $id; ?>">Borrar</a></td>
+<td><a href="ABC.php?borrar=<?php echo $id; ?>" onclick="return ConfirmDelete()">Borrar</a></td>
 </tr>
 <?php } ?>
 </table>
@@ -86,7 +115,9 @@ while ( $fila = mysqli_fetch_array($ejecutar)) {
 
 		if ($ejecutar){
 			echo "<h3>Insertado Correctamente</h3>";
-			echo "<script>windows.open('ABC.php','_self')</script>";
+			header("location: ABC.php");
+			location.reload();
+			//echo "<script>windoows.open('ABC.php','_self')</script>";
 		}
 	}
 ?>
@@ -109,7 +140,9 @@ if(isset($_GET['borrar'])){
 
 	if ($ejecutar){
 		echo "<script>alert('El jedi ha sido borrado!')</script>";
-		echo "<script>windows.open('ABC.php','_self')</script>";
+		header("location: ABC.php");
+		location.reload();
+		//echo "<script>windoows.open('ABC.php','_self')</script>";
 	}
 
 }

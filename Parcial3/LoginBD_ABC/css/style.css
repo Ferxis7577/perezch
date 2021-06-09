@@ -57,6 +57,7 @@ input[type="submit"]:hover{
     color:#029EE1;
     font-weight: 500;
 }
+
 .title{
     text-align: center;
     margin-top: 20px;
@@ -76,7 +77,7 @@ input[type="submit"]:hover{
 .ctn-form{
     width:100%;
     padding: 10px;
-    background: #f7f7f7;
+    background: #f8f6f6;
 }
 .ctn-text{
     width: 100%;

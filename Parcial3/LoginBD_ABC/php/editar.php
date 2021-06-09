@@ -27,6 +27,9 @@ if(isset($_GET['editar'])){
 <label>ColorSable:<br></label>
 <input type="text" name="ColorSable" value="<?php echo $ColorSable; ?>"><br />
 <input type="submit" name="actualizar" value="ACTUALIZAR DATOS">
+<span class="text-footer"> No desea hacer alguna modificacion?
+	 	<a href="ABC.php"class="close-session">Cancelar Edicion</a></a>
+	</span>
 </div>
 </form>
 
@@ -44,7 +47,9 @@ $ejecutar = mysqli_query($con, $actualizar);
 
 if ($ejecutar){
 	echo "<script>alert('Datos Actualizados!')</script>";
-	echo "<script>windows.open('ABC.php','_self')</script>";
+	header("location: ABC.php");
+	location.reload();
+	//echo "<script>windoows.open('ABC.php','_self')</script>";
 }
 else{
 	echo "asdasdas";
